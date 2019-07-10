@@ -1,52 +1,86 @@
 .navbar {
   //background-color: rgba(255, 165, 0, 0.6);
   height: 3em;
-  background-image: url("../images/backgrounds/bg2.png");
+  background-image: url("../images/backgrounds/bg-dark.png");
   background-size: contain;
   font-size: 1.7em;
   font-variant: small-caps;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 2px 3px 10px #432108;
+
   .navbar-brand {
     img {
-      top: 0.15em;
+      top: 3em;
       position: absolute;
     }
   }
   a {
-    background-color: rgba(245, 245, 245, 0.5);
-    border-radius: 7px;
-    margin-top: 0.2em;
+    //background-color: rgba(245, 245, 245, 0.5);
+    //border-radius: 7px;
+    margin-top: 0.05em;
     padding-top: 0;
     padding-bottom: 0;
-    color: teal;
-    vertical-align: middle;
-    text-shadow: 2px 2px 2px whitesmoke;
-  }
-  a:hover {
-    background-color: rgba(245, 245, 245, 0.8);
-    color: orange;
-
-  }
-  i {
-    padding: 0.5em;
+    //color: teal;
     color: whitesmoke;
     vertical-align: middle;
+    text-shadow: 3px 1px #201004, -1px -1px 2px #444;
+    //text-shadow: 2px 2px 2px whitesmoke;
+    font-family: $font-title;
+    font-size: 1.2em;
+  }
+  .one:hover {
+    //background-color: rgba(245, 245, 245, 0.8);
+    color: $secondary-color;
+  }
+  .two:hover {
+    //background-color: rgba(245, 245, 245, 0.8);
+    color: $third-color;
+  }
+  .three:hover {
+    //background-color: rgba(245, 245, 245, 0.8);
+    color: $fourth-color;
+  }
+  i {
+    padding: 1.5em;
+    font-size: 0.5em;
+    color: whitesmoke;
+    vertical-align: middle;
+    text-shadow: 3px 1px #201004, -1px -1px 2px #444;
+  }
+  form {
+    //margin-left: 3em;
+    .form-control {
+      box-shadow: 3px 1px #201004, -1px -1px 2px #444;
+      margin-right: 0.5em;
+      width: 10em;
+      color: $secondary-color;
+      font-variant: small-caps;
+    }
+    @media (max-width: 668px) {
+      .form-inline {
+        display: contents !important;
+      }
+    }
 
   }
+
   button {
     padding: 0;
     i {
-      background-color: teal;
+      color: #432108;
+      background-color: $primary-color;
       padding-left: 0.5em;
       padding-right: 0.5em;
-      padding-top: 0.2em;
-      padding-bottom: 0.2em;
+      padding-top: 0.25em;
+      padding-bottom: 0.29em;
       font-size: 1.5em;
-      border: 1px solid whitesmoke;
-      border-radius: 5px;
+      box-shadow: 3px 1px #201004, -1px -1px 2px #444;
+      //border: 1px solid whitesmoke;
+      border-radius: 4px;
+      text-shadow: rgba(255,255,255,0.5) 0 3px 3px;
     }
     i:hover {
-      background-color: orange;
+      background-color: $third-color;
+
     }
   }
 }
