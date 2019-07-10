@@ -2,11 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title class="titre">{% block title %}Wild Spirit{% endblock %}</title>
+        <link rel="icon" type="image/png" href="{{ asset('build/images/logos/favicon.png') }}" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block header %}{% endblock header %}
+        {% block body %}{% endblock body %}
+        {% block footer %}{% endblock footer %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock javascripts %}
     </body>
 </html>
