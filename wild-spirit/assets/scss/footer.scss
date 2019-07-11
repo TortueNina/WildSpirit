@@ -1,0 +1,18 @@
+footer {
+  background-image: url("../images/backgrounds/bg-dark.png");
+  background-size: cover;
+  background-position: center bottom;
+  box-shadow: 0 -1px 10px #432108;
+  .foot {
+    text-align: center;
+    display: block;
+    height: 100%;
+    //font-size: 1.7em;
+    font-variant: small-caps;
+    box-shadow: 2px 3px 10px #432108;
+    img:hover {
+      transform: rotate(-5deg);
+      transition: .5s ease-in-out;
+    }
+  }
+}
