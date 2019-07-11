@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Association index{% endblock %}
+
+{% block body %}
+    <h1>Association index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Creation_date</th>
+                <th>Adress_number</th>
+                <th>Adress_street</th>
+                <th>Adress_town</th>
+                <th>Adress_postcode</th>
+                <th>Website</th>
+                <th>Telephon</th>
+                <th>Mail</th>
+                <th>IsRefuge</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for association in associations %}
+            <tr>
+                <td>{{ association.id }}</td>
+                <td>{{ association.name }}</td>
+                <td>{{ association.description }}</td>
+                <td>{{ association.creationDate ? association.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ association.adressNumber }}</td>
+                <td>{{ association.adressStreet }}</td>
+                <td>{{ association.adressTown }}</td>
+                <td>{{ association.adressPostcode }}</td>
+                <td>{{ association.website }}</td>
+                <td>{{ association.telephon }}</td>
+                <td>{{ association.mail }}</td>
+                <td>{{ association.isRefuge ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
+                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('association_new') }}">Create new</a>
+{% endblock %}
