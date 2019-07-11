@@ -7,11 +7,10 @@
     margin-bottom: 0;
     background-position: top;
     background-size: contain;
-    .stamp {
-      display: inline-grid;
-      img {
-       float: right;
-      }
+    text-align: center;
+    display: block;
+    .jumbo-text {
+      justify-content: center;
     }
   }
 }

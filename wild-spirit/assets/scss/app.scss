@@ -10,4 +10,8 @@
 body {
     background-color: whitesmoke;
     //background: url("../images/backgrounds/bg-WS.jpg") fixed;
+    h1, h2, h3, h4, h5, h6 {
+        font-variant: small-caps;
+        font-family: $font-one;
+    }
 }
