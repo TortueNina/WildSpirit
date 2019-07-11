@@ -6,6 +6,16 @@
   font-variant: small-caps;
   box-shadow: 2px 3px 10px #432108;
 
+  .dropdown-menu {
+    background-image: url("../images/backgrounds/bg-dark.png");
+    background-size: contain;
+    width: 11.5em;
+    font-size: 0.7em;
+    .dropdown-item:hover {
+      background-color: transparent;
+    }
+  }
+
   .navbar-brand {
     img {
       top: 0.06em;
