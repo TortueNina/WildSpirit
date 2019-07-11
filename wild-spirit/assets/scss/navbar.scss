@@ -1,5 +1,4 @@
 .navbar {
-  //background-color: rgba(255, 165, 0, 0.6);
   height: 3em;
   background-image: url("../images/backgrounds/bg-dark.png");
   background-size: contain;
@@ -9,34 +8,28 @@
 
   .navbar-brand {
     img {
-      top: 3em;
+      top: 0.06em;
       position: absolute;
+      text-shadow: 2px 3px 10px #432108;
     }
   }
   a {
-    //background-color: rgba(245, 245, 245, 0.5);
-    //border-radius: 7px;
-    margin-top: 0.05em;
+    //margin-top: 0.04em;
     padding-top: 0;
     padding-bottom: 0;
-    //color: teal;
     color: whitesmoke;
     vertical-align: middle;
     text-shadow: 3px 1px #201004, -1px -1px 2px #444;
-    //text-shadow: 2px 2px 2px whitesmoke;
     font-family: $font-title;
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   .one:hover {
-    //background-color: rgba(245, 245, 245, 0.8);
     color: $secondary-color;
   }
   .two:hover {
-    //background-color: rgba(245, 245, 245, 0.8);
     color: $third-color;
   }
   .three:hover {
-    //background-color: rgba(245, 245, 245, 0.8);
     color: $fourth-color;
   }
   i {
@@ -47,11 +40,11 @@
     text-shadow: 3px 1px #201004, -1px -1px 2px #444;
   }
   form {
-    //margin-left: 3em;
+    //margin-left: 7em;
     .form-control {
       box-shadow: 3px 1px #201004, -1px -1px 2px #444;
       margin-right: 0.5em;
-      width: 10em;
+      width: 13em;
       color: $fourth-color;
       font-variant: small-caps;
     }
@@ -74,12 +67,11 @@
       padding-bottom: 0.29em;
       font-size: 1.5em;
       box-shadow: 3px 1px #201004, -1px -1px 2px #444;
-      //border: 1px solid whitesmoke;
       border-radius: 4px;
       text-shadow: rgba(255,255,255,0.5) 0 3px 3px;
     }
     i:hover {
-      background-color: $third-color;
+      background-color: $fourth-color;
 
     }
   }

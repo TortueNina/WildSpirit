@@ -1,0 +1,17 @@
+.jumbo {
+  .jumbotron {
+    background-image: url("../images/jumbotron/dog_hand.jpg");
+    background-attachment: fixed;
+    height: 70vh;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    background-position: top;
+    background-size: contain;
+    .stamp {
+      display: inline-grid;
+      img {
+       float: right;
+      }
+    }
+  }
+}
