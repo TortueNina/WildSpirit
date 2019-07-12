@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Association;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,6 +15,7 @@ class AssociationType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('title')
             ->add('description')
             ->add('creation_date')
             ->add('adress_number')
@@ -23,7 +26,13 @@ class AssociationType extends AbstractType
             ->add('telephon')
             ->add('mail')
             ->add('isRefuge')
-            ->add('category')
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'multiple' => true,
+                'expanded' => true,
+                'by_reference' => false,
+                'choice_label' => 'name',
+            ]);
         ;
     }
 

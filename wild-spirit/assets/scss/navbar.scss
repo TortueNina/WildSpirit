@@ -11,9 +11,27 @@
     background-size: contain;
     width: 11.5em;
     font-size: 0.7em;
+    .dropdown-item {
+      i {
+        font-size: 0.7em;
+        padding-top: 0;
+        padding-bottom: 0.7em;
+        padding-left: 0;
+        padding-right: 0.2em;
+      }
+    }
     .dropdown-item:hover {
       background-color: transparent;
       transform: none;
+      i.one {
+        color: $secondary-color;
+      }
+      i.two {
+        color: $third-color;
+      }
+      i.three {
+        color: $fourth-color;
+      }
     }
   }
 
@@ -40,18 +58,12 @@
   }
   .one:hover {
     color: $secondary-color;
-    transform: rotate(-5deg);
-    transition: .5s ease-in-out;
   }
   .two:hover {
     color: $third-color;
-    transform: rotate(-5deg);
-    transition: .5s ease-in-out;
   }
   .three:hover {
     color: $fourth-color;
-    transform: rotate(-5deg);
-    transition: .5s ease-in-out;
   }
   i {
     padding: 1.5em;

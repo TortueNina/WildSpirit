@@ -14,3 +14,33 @@
     }
   }
 }
+
+.associations {
+
+  .assoc-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    left: 0;
+    right: 0;
+
+    .card {
+      width: 25em;
+      height: 25em;
+      p {
+        text-align: left;
+        margin-top: 3em;
+        display: none;
+      }
+    }
+    .card:hover img {
+      opacity: 0.5;
+      transition: .5s ease-in-out;
+    }
+    .card:hover p {
+      display: block;
+    }
+  }
+}

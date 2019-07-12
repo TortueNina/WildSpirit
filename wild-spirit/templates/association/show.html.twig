@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Association{% endblock %}
 
@@ -7,10 +8,10 @@
 
     <table class="table">
         <tbody>
-            <tr>
+{#            <tr>
                 <th>Id</th>
                 <td>{{ association.id }}</td>
-            </tr>
+            </tr>#}
             <tr>
                 <th>Name</th>
                 <td>{{ association.name }}</td>
@@ -20,8 +21,12 @@
                 <td>{{ association.description }}</td>
             </tr>
             <tr>
+                <th>Catégorie</th>
+                <td>{{ association.category }}</td>
+            </tr>
+            <tr>
                 <th>Creation_date</th>
-                <td>{{ association.creationDate ? association.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ association.creationDate ? association.creationDate|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
                 <th>Adress_number</th>
