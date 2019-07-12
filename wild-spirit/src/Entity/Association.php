@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AssociationRepository")
+ * @Vich\Uploadable
  */
 class Association
 {
@@ -31,27 +34,27 @@ class Association
     /**
      * @ORM\Column(type="datetime")
      */
-    private $creation_date;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $adress_number;
+    private $addressNumber;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adress_street;
+    private $addressStreet;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adress_town;
+    private $addressTown;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $adress_postcode;
+    private $addressPostcode;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -61,7 +64,7 @@ class Association
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $telephon;
+    private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -85,13 +88,32 @@ class Association
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $picture;
+
+    /**
+     * @Vich\UploadableField(mapping="association_picture", fileNameProperty="picture")
+     * @var File
+     */
+    private $pictureFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $logo;
+
+    /**
+     * @Vich\UploadableField(mapping="association_logo", fileNameProperty="logo")
+     * @var File
+     */
+    private $logoFile;
 
     public function __construct()
     {
@@ -129,60 +151,60 @@ class Association
 
     public function getCreationDate(): ?\DateTimeInterface
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
     public function setCreationDate(\DateTimeInterface $creation_date): self
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
-    public function getAdressNumber(): ?int
+    public function getAddressNumber(): ?int
     {
-        return $this->adress_number;
+        return $this->addressNumber;
     }
 
-    public function setAdressNumber(?int $adress_number): self
+    public function setAddressNumber(?int $addressNumber): self
     {
-        $this->adresse_number = $adress_number;
+        $this->addresseNumber = $addressNumber;
 
         return $this;
     }
 
-    public function getAdressStreet(): ?string
+    public function getAddressStreet(): ?string
     {
-        return $this->adress_street;
+        return $this->addressStreet;
     }
 
-    public function setAdressStreet(string $adress_street): self
+    public function setAddressStreet(string $addressStreet): self
     {
-        $this->adress_street = $adress_street;
+        $this->addressStreet = $addressStreet;
 
         return $this;
     }
 
-    public function getAdressTown(): ?string
+    public function getAddressTown(): ?string
     {
-        return $this->adress_town;
+        return $this->addressTown;
     }
 
-    public function setAdressTown(string $adress_town): self
+    public function setAddressTown(string $addressTown): self
     {
-        $this->adress_town = $adress_town;
+        $this->addressTown = $addressTown;
 
         return $this;
     }
 
-    public function getAdressPostcode(): ?int
+    public function getAddressPostcode(): ?int
     {
-        return $this->adress_postcode;
+        return $this->addressPostcode;
     }
 
-    public function setAdressPostcode(int $adress_postcode): self
+    public function setAddressPostcode(int $addressPostcode): self
     {
-        $this->adress_postcode = $adress_postcode;
+        $this->addressPostcode = $addressPostcode;
 
         return $this;
     }
@@ -199,14 +221,14 @@ class Association
         return $this;
     }
 
-    public function getTelephon(): ?int
+    public function getTelephone(): ?int
     {
-        return $this->telephon;
+        return $this->telephone;
     }
 
-    public function setTelephon(?int $telephon): self
+    public function setTelephone(?int $telephone): self
     {
-        $this->telephon = $telephon;
+        $this->telephone = $telephone;
 
         return $this;
     }
@@ -273,6 +295,37 @@ class Association
         return $this;
     }
 
+    public function setPictureFile(File $picture = null)
+    {
+        $this->pictureFile = $picture;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($picture) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function setLogoFile(File $logo = null)
+    {
+        $this->logoFile = $logo;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($logo) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getPictureFile(): ?string
+    {
+        return $this->pictureFile;
+    }
+
     public function getPicture(): ?string
     {
         return $this->picture;
@@ -283,6 +336,11 @@ class Association
         $this->picture = $picture;
 
         return $this;
+    }
+
+    public function getLogoFile(): ?string
+    {
+        return $this->logoFile;
     }
 
     public function getLogo(): ?string

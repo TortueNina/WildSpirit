@@ -13,12 +13,12 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Creation_date</th>
-                <th>Adress_number</th>
-                <th>Adress_street</th>
-                <th>Adress_town</th>
-                <th>Adress_postcode</th>
+                <th>Address_number</th>
+                <th>Address_street</th>
+                <th>Address_town</th>
+                <th>Address_postcode</th>
                 <th>Website</th>
-                <th>Telephon</th>
+                <th>Telephone</th>
                 <th>Mail</th>
                 <th>IsRefuge</th>
                 <th>actions</th>
@@ -30,13 +30,13 @@
                 <td>{{ association.id }}</td>
                 <td>{{ association.name }}</td>
                 <td>{{ association.description }}</td>
-                <td>{{ association.creationDate ? association.creationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ association.adressNumber }}</td>
-                <td>{{ association.adressStreet }}</td>
-                <td>{{ association.adressTown }}</td>
-                <td>{{ association.adressPostcode }}</td>
+                <td>{{ association.creationDate ? association.creationDate|date('Y-m') : '' }}</td>
+                <td>{{ association.addressNumber }}</td>
+                <td>{{ association.addressStreet }}</td>
+                <td>{{ association.addressTown }}</td>
+                <td>{{ association.addressPostcode }}</td>
                 <td>{{ association.website }}</td>
-                <td>{{ association.telephon }}</td>
+                <td>{{ association.telephone }}</td>
                 <td>{{ association.mail }}</td>
                 <td>{{ association.isRefuge ? 'Yes' : 'No' }}</td>
                 <td>
