@@ -32,7 +32,7 @@ class Association
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $creationDate;
 
@@ -78,6 +78,7 @@ class Association
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="associations")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
@@ -97,12 +98,6 @@ class Association
      * @var File
      */
     private $pictureFile;
-
-    /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
-     */
-    private $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

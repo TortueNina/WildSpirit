@@ -25,61 +25,31 @@
             <h4 class="card-title">{{ association.title }}</h4>
             <p class="card-text">{{ association.description }}</p>
         </div>
+         <div class="category">
+            <ul>
+                {% for category in association.category %}
+                    <li>
+                        {% if category.name == "Refuges" %}
+                            <i class="fas fa-home three"></i>
+                        {% elseif category.name == "Chiens" %}
+                            <i class="fas fa-dog one"></i>
+                        {% elseif category.name == "Chats" %}
+                            <i class="fas fa-cat two"></i>
+                        {% elseif category.name == "Oiseaux" %}
+                            <i class="fas fa-dove three"></i>
+                        {% elseif category.name == "Poissons" %}
+                            <i class="fas fa-fish one"></i>
+                        {% elseif category.name == "Chevaux" %}
+                            <i class="fas fa-horse-head two"></i>
+                        {% else %}
+                                {{ category.name }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     {% endfor %}
-
-
-    {#
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">2</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">3</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">4</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">5</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">6</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    <div class="card my-2">
-        <img src="{{ asset('build/images/associations/dog_hug.png') }}" class="card-img"  alt="association">
-        <div class="card-img-overlay">
-            <h5 class="card-title">6</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-    </div>
-    #}
-
 
 </div>
 

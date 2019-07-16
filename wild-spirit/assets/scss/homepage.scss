@@ -34,6 +34,31 @@
         margin-top: 3em;
         display: none;
       }
+      .category {
+        //padding-bottom: 0;
+        ul {
+          margin-top: 3em;
+          padding-left: 0;
+          li {
+            display: inline;
+            i {
+              font-size: 2em;
+              margin-left: 0.15em;
+              margin-right: 0.15em;
+              text-shadow: 1px 2px 1px gray;
+            }
+            .one {
+              color: $secondary-color;
+            }
+            .two {
+              color: $third-color;
+            }
+            .three {
+              color: $fourth-color;
+            }
+          }
+        }
+      }
     }
     .card:hover img {
       opacity: 0.5;

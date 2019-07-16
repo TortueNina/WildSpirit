@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Association;
+use App\Entity\category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,6 +22,10 @@ class HomeController extends AbstractController
     {
         $associations = $this-> getDoctrine()
             ->getRepository(Association::class)
+            ->findAll();
+
+        $categories = $this-> getDoctrine()
+            ->getRepository(Category::class)
             ->findAll();
 
         return $this->render('home/index.html.twig', [
